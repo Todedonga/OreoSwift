@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct TrainCardView: View {
+    
+    var name: String
+    var iconColor: Color
+    
     var body: some View {
         VStack(){
             HStack(){
@@ -16,7 +20,7 @@ struct TrainCardView: View {
                 Text("Oferta")
                     .padding(.vertical, 4)
                     .padding(.horizontal, 12)
-                    .background(Color.green)
+                    .background(iconColor)
                     .foregroundColor(.white)
                     .cornerRadius(2)
                     .frame( maxWidth: .infinity, alignment: .trailing)
@@ -24,11 +28,11 @@ struct TrainCardView: View {
             
             Image(systemName: "tram.circle.fill")
                 .font(.system(size: 90, weight: .light, design: .default))
-                .foregroundColor(.green)
+                .foregroundColor(iconColor)
                 .aspectRatio(contentMode: .fit )
                 .frame(width: 120, height: 100)
             
-            Text("Tren Bala Hikari")
+            Text(name)
                 .font(.largeTitle)
                 .lineLimit(1)
                 .truncationMode(.middle)
@@ -46,5 +50,5 @@ struct TrainCardView: View {
 }
 
 #Preview {
-    ContentView()
+    TrainCardView(name: "Tren Bala Hikari", iconColor: .blue)
 }

@@ -11,10 +11,10 @@ struct ContentView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                TrainCardView()
-                TrainCardView()
-                TrainCardView()
-                TrainCardView()
+                TrainCardView(name: "Steel Roads", iconColor: .yellow)
+                TrainCardView(name: "El Diablo Express", iconColor: .red)
+                TrainCardView(name: "Correcaminos", iconColor: .orange)
+                TrainCardView(name: "Tren de la Costa", iconColor: .black)
             }
         }
     }
